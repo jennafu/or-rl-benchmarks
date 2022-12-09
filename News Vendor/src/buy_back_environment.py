@@ -29,15 +29,15 @@ class NewsVendorGymEnvironment(gym.Env):
     def __init__(self, config={}):
         self.l = config.get("lead time", 5)
         self.gamma = config.get("discount factor", 1)
-        self.max_level = 2000
-        self.max_action = 1000
+        self.max_level = 4000
+        self.max_action = 2000
         self.step_count = 0
         self.max_steps = 40
 
-        self.max_value = 50.
+        self.max_value = 100.
         self.max_holding_cost = 0. # holding cost transferred to supplier
-        self.max_loss_goodwill = 5.
-        self.max_mean = 100
+        self.max_loss_goodwill = 10.
+        self.max_mean = 200
 
         self.inv_dim = max(self.l, 1)
         space_low = self.inv_dim * [0]
